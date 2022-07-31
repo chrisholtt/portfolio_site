@@ -74,7 +74,7 @@ class ThreeScene extends Component {
         //camera
         this.camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
         this.camera.position.x = 0
-        this.camera.position.y = -5
+        this.camera.position.y = -2.5
         this.camera.position.z = 30
         this.scene.add(this.camera)
 
@@ -94,15 +94,16 @@ class ThreeScene extends Component {
         let mouseY = 0;
         let targetX = 0;
         let targetY = 0;
+
         const onDocumentMouseMove = (event) => {
             mouseX = (event.clientX - windowHalfX)
             mouseY = (event.clientY - windowHalfY)
         }
 
-        const moveDiamond = () => {
-            this.diamond.position.y = 5.5 + (window.screenY * .2)
+        const moveDiamond = (element) => {
+            this.diamond.position.y = 5.5 + (window.scrollY * .2)
+            this.diamond2.position.y = - 5.5 - (window.scrollY * .2)
             console.log(this.diamond.position.y)
-            this.diamond2.position.y = - 5.5 + (window.screenY * .2)
         }
 
         document.addEventListener('mousemove', onDocumentMouseMove)
