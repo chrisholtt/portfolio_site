@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
+import * as dat from 'dat.gui';
 
 class ThreeScene extends Component {
 
     componentDidMount() {
-
         // Loader
-        const textureLoader = new THREE.TextureLoader()
-        const normalTexture = textureLoader.load('./static/textures/normal-map.png')
+        const normalTexture = new THREE.TextureLoader().load('../textures/normal-map3.png')
+        // const displaceTexture = new THREE.TextureLoader().load('../textures/displace-map4.jpg')
+
+        // Debug
+        const gui = new dat.GUI();
 
         //scene
         this.scene = new THREE.Scene()
@@ -17,12 +20,13 @@ class ThreeScene extends Component {
 
         // Materials
         const material = new THREE.MeshStandardMaterial();
-        material.color = new THREE.Color(0xffffff);
+        material.color = new THREE.Color(0x000000);
         material.roughness = 0.15;
-        material.metalness = 0.9;
+        material.metalness = 0.85;
         material.normalMap = normalTexture
-        // material.transparent = true;
-        // material.opacity = 0.75;
+        // material.displacementMap = displaceTexture
+        // material.transparent = true
+        // material.opacity = 0.85;
 
         // Mesh 
         // Top diamond
@@ -36,19 +40,66 @@ class ThreeScene extends Component {
 
         // Lights
         // main light
-        const pointLight = new THREE.PointLight(0xffffff, 5)
-        pointLight.position.set(2, 5, 40)
+        const pointLight = new THREE.PointLight(0xffffff, 30)
+        pointLight.position.set(2, 5, 30)
         this.scene.add(pointLight)
 
         // red light
-        const pointLight2 = new THREE.PointLight(0xff0000, 20)
-        pointLight2.position.set(-10, 10, 21)
+        const pointLight2 = new THREE.PointLight(0xd30cb8, 80)
+        pointLight2.position.set(-10, 10, -9)
         this.scene.add(pointLight2)
 
+        const light2 = gui.addFolder('light2')
+        light2.add(pointLight2.position, 'y').min(-10).max(10)
+        light2.add(pointLight2.position, 'x').min(-10).max(10)
+        light2.add(pointLight2.position, 'z').min(-100).max(100)
+        light2.add(pointLight2, 'intensity').min(0).max(100)
+        const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
+        this.scene.add(pointLightHelper2)
+
+        const light2Color = {
+            color: 0xff0000
+        }
+
+        light2.addColor(light2Color, 'color').onChange(() => {
+            pointLight2.color.set(light2Color.color)
+        })
+
+
         // blue light
-        const pointLight3 = new THREE.PointLight(0x0000ff, 20)
-        pointLight3.position.set(10, -10, 21)
+        const pointLight3 = new THREE.PointLight(0x6df1d8, 80)
+        pointLight3.position.set(10, 10, -10)
         this.scene.add(pointLight3)
+
+        const light3 = gui.addFolder('light3')
+        light3.add(pointLight3.position, 'y').min(-10).max(10)
+        light3.add(pointLight3.position, 'x').min(-10).max(10)
+        light3.add(pointLight3.position, 'z').min(-100).max(100)
+        light3.add(pointLight3, 'intensity').min(0).max(100)
+
+        const light3Color = {
+            color: 0x0000ff
+        }
+
+        light3.addColor(light3Color, 'color').onChange(() => {
+            pointLight3.color.set(light3Color.color)
+        })
+        const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
+        this.scene.add(pointLightHelper3)
+
+        // bluelight 2
+        const pointLight4 = new THREE.PointLight(0x6df1d8, 80)
+        pointLight4.position.set(-10, -10, -10)
+        this.scene.add(pointLight4)
+        const pointLightHelper4 = new THREE.PointLightHelper(pointLight4, 1)
+        this.scene.add(pointLightHelper4)
+
+        // redlight 2
+        const pointLight5 = new THREE.PointLight(0xd30cb8, 80)
+        pointLight5.position.set(10, -10, -10)
+        this.scene.add(pointLight5)
+        const pointLightHelper5 = new THREE.PointLightHelper(pointLight5, 1)
+        this.scene.add(pointLightHelper5)
 
         // sizes
         const sizes = {
@@ -74,8 +125,8 @@ class ThreeScene extends Component {
         //camera
         this.camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
         this.camera.position.x = 0
-        this.camera.position.y = -2.5
-        this.camera.position.z = 30
+        this.camera.position.y = 0
+        this.camera.position.z = 15
         this.scene.add(this.camera)
 
 
@@ -101,9 +152,8 @@ class ThreeScene extends Component {
         }
 
         const moveDiamond = (element) => {
-            this.diamond.position.y = 5.5 + (window.scrollY * .2)
-            this.diamond2.position.y = - 5.5 - (window.scrollY * .2)
-            console.log(this.diamond.position.y)
+            this.diamond.position.y = 5.5 + (window.scrollY * .1)
+            this.diamond2.position.y = - 5.5 - (window.scrollY * .1)
         }
 
         document.addEventListener('mousemove', onDocumentMouseMove)
@@ -114,16 +164,18 @@ class ThreeScene extends Component {
         const clock = new THREE.Clock()
         const tick = () => {
             targetX = mouseX * .001
-
+            targetY = mouseY * .001
 
             const elapsedTime = clock.getElapsedTime()
-
             // Update objects
             this.diamond.rotation.y = 0.4 * elapsedTime
             this.diamond2.rotation.y = 0.4 * elapsedTime
 
             this.diamond.rotation.y += .5 * (targetX - this.diamond.rotation.y)
             this.diamond2.rotation.y += .5 * (targetX - this.diamond2.rotation.y)
+
+            this.diamond.position.z = 6 * (targetY - this.diamond.rotation.x)
+            this.diamond2.position.z = 6 * (targetY - this.diamond.rotation.x)
 
             // Render
             this.renderer.render(this.scene, this.camera)
