@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as THREE from 'three';
 import * as dat from 'dat.gui';
 
-class ThreeScene extends Component {
+class ThreeScene2 extends Component {
 
     componentDidMount() {
         // Loader
@@ -16,12 +16,12 @@ class ThreeScene extends Component {
         this.scene = new THREE.Scene()
 
         // Objects
-        const geometry = new THREE.ConeGeometry(6, 10, 4, 1, false, 0, 6.283185307179586);
+        const geometry = new THREE.BoxGeometry(1, 1, 1);
 
         // Materials
         const material = new THREE.MeshStandardMaterial();
         material.color = new THREE.Color(0x000000);
-        material.roughness = 0.25;
+        material.roughness = 0.3;
         material.metalness = 0.85;
         material.normalMap = normalTexture
         // material.displacementMap = displaceTexture
@@ -29,14 +29,34 @@ class ThreeScene extends Component {
         // material.opacity = 0.85;
 
         // Mesh 
-        // Top diamond
         this.diamond = new THREE.Mesh(geometry, material)
-        this.diamond.position.y = 5.5
-        // bottom diamond
+        this.diamond.position.y = 8
+        this.diamond.position.x = -8
+        this.scene.add(this.diamond)
+
         this.diamond2 = new THREE.Mesh(geometry, material)
-        this.diamond2.rotation.x = Math.PI * 1
-        this.diamond2.position.y = -5.5
-        this.scene.add(this.diamond, this.diamond2)
+        this.diamond2.position.y = 3
+        this.diamond2.position.x = 10
+        this.scene.add(this.diamond2)
+
+        this.diamond3 = new THREE.Mesh(geometry, material)
+        this.diamond3.position.y = 0
+        this.diamond3.position.x = -8
+        this.diamond3.position.z = -2
+        this.scene.add(this.diamond3)
+
+        this.diamond4 = new THREE.Mesh(geometry, material)
+        this.diamond4.position.y = -4
+        this.diamond4.position.x = 4
+        this.diamond4.position.z = 4
+        this.scene.add(this.diamond4)
+
+        this.diamond5 = new THREE.Mesh(geometry, material)
+        this.diamond5.position.y = -7
+        this.diamond5.position.x = -13
+        this.diamond5.position.z = -5
+        this.scene.add(this.diamond5)
+
 
         // Lights
         // main light
@@ -55,7 +75,7 @@ class ThreeScene extends Component {
         light2.add(pointLight2.position, 'z').min(-100).max(100)
         light2.add(pointLight2, 'intensity').min(0).max(100)
         const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
-        this.scene.add(pointLightHelper2)
+        // this.scene.add(pointLightHelper2)
 
         const light2Color = {
             color: 0xff0000
@@ -85,21 +105,21 @@ class ThreeScene extends Component {
             pointLight3.color.set(light3Color.color)
         })
         const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
-        this.scene.add(pointLightHelper3)
+        // this.scene.add(pointLightHelper3)
 
         // bluelight 2
         const pointLight4 = new THREE.PointLight(0x6df1d8, 80)
         pointLight4.position.set(-10, -10, -10)
         this.scene.add(pointLight4)
         const pointLightHelper4 = new THREE.PointLightHelper(pointLight4, 1)
-        this.scene.add(pointLightHelper4)
+        // this.scene.add(pointLightHelper4)
 
         // redlight 2
         const pointLight5 = new THREE.PointLight(0xd30cb8, 80)
         pointLight5.position.set(10, -10, -10)
         this.scene.add(pointLight5)
         const pointLightHelper5 = new THREE.PointLightHelper(pointLight5, 1)
-        this.scene.add(pointLightHelper5)
+        // this.scene.add(pointLightHelper5)
 
         // sizes
         const sizes = {
@@ -156,10 +176,9 @@ class ThreeScene extends Component {
         }
 
         const moveDiamond = (element) => {
-            this.diamond.position.y = 5.5 + (window.scrollY * .01)
-            this.diamond2.position.y = - 5.5 - (window.scrollY * .01)
-            this.camera.rotation.x = - (window.scrollY * 0.001)
-            this.camera.rotation.z = - (window.scrollY * 0.001)
+            // this.diamond.position.x = (window.scrollY * 0.002)
+            this.camera.position.z = (window.scrollY * 0.02)
+
 
             return () => window.removeEventListener('scroll', moveDiamond)
         }
@@ -177,13 +196,32 @@ class ThreeScene extends Component {
             const elapsedTime = clock.getElapsedTime()
             // Update objects
             this.diamond.rotation.y = 0.4 * elapsedTime
-            this.diamond2.rotation.y = 0.4 * elapsedTime
-
+            this.diamond.rotation.x = 0.4 * elapsedTime
             this.diamond.rotation.y += .5 * (targetX - this.diamond.rotation.y)
-            this.diamond2.rotation.y += .5 * (targetX - this.diamond2.rotation.y)
+            this.diamond.rotation.x += 2 * (targetY - this.diamond.rotation.x)
+            // this.diamond.position.x = (targetX * 2)
 
-            this.diamond.position.z = 6 * (targetY - this.diamond.rotation.x)
-            this.diamond2.position.z = 6 * (targetY - this.diamond.rotation.x)
+
+            this.diamond2.rotation.y = 0.3 * elapsedTime
+            this.diamond2.rotation.x = 0.3 * elapsedTime
+            this.diamond2.rotation.y += 2 * (targetX - this.diamond2.rotation.y)
+            this.diamond2.rotation.x += 2 * (targetY - this.diamond2.rotation.x)
+
+            this.diamond3.rotation.y = 0.4 * elapsedTime
+            this.diamond3.rotation.x = 0.4 * elapsedTime
+            this.diamond3.rotation.y += 2 * (targetX - this.diamond3.rotation.y)
+            this.diamond3.rotation.x += 2 * (targetY - this.diamond3.rotation.x)
+
+            this.diamond4.rotation.y = - 0.1 * elapsedTime
+            this.diamond4.rotation.x = - 0.4 * elapsedTime
+            this.diamond4.rotation.y += 2 * (targetX - this.diamond4.rotation.y)
+            this.diamond4.rotation.x += 2 * (targetY - this.diamond4.rotation.x)
+
+            this.diamond5.rotation.y = - 0.1 * elapsedTime
+            this.diamond5.rotation.x = - 0.4 * elapsedTime
+            this.diamond5.rotation.y += 2 * (targetX - this.diamond5.rotation.y)
+            this.diamond5.rotation.x += 2 * (targetY - this.diamond5.rotation.x)
+
 
             //  Render
             this.renderer.render(this.scene, this.camera)
@@ -197,7 +235,7 @@ class ThreeScene extends Component {
 
     render() {
         return (
-            <div className='webgl1' ref={mount => {
+            <div className='webgl2' ref={mount => {
                 this.mount = mount
             }} />
 
@@ -206,4 +244,4 @@ class ThreeScene extends Component {
 }
 
 
-export default ThreeScene;
+export default ThreeScene2;

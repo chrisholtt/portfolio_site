@@ -12,14 +12,13 @@ const Title = () => {
     }, [])
 
 
-
-
     return (
-        <div className="container">
-            <h1 className='chris' style={{ transform: `translateX(${- offSetX * 5}px)` }}>CHRIS </h1>
-            <h1 className='holt' style={{ transform: `translateX(${offSetX * 5}px)` }}> HOLT </h1>
-
-        </div>
+        <>
+            <div className="container">
+                <h1 className='chris' style={{ transform: `translateX(${- offSetX * 1}px)` }}>CHRIS</h1>
+                <h1 className='holt' style={{ transform: `translateX(${offSetX * 1}px)` }}>HOLT</h1>
+            </div>
+        </>
     )
 }
 
