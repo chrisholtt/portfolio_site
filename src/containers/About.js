@@ -40,6 +40,10 @@ const About = () => {
     const handleOpenSol = () => setOpenSol(true);
     const handleCloseSol = () => setOpenSol(false);
 
+    // Java
+    const [openJava, setOpenJava] = React.useState(false);
+    const handleOpenJava = () => setOpenJava(true);
+    const handleCloseJava = () => setOpenJava(false);
 
 
     return (
@@ -47,12 +51,13 @@ const About = () => {
             <Backdrop open={open} />
             <Backdrop open={openPy} />
             <Backdrop open={openSol} />
+            <Backdrop open={openJava} />
 
             <div className='skill-wrapper'>
                 <div className="skill-top" style={{ transform: `translateY(${offSetX * 0.2}px)` }}>
 
                     <div className='skill'>
-                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#6df1d8', '&:hover': { bgcolor: '#6df1d8' } } }} onClose={handleClose} onOpen={handleOpen} open={open} ariaLabel="SpeedDial tooltip example" icon={<img style={{ marginTop: '10px' }} src="./static/javascript-icon.svg" alt="" />}>
+                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#202124', '&:hover': { bgcolor: '#202124' } } }} onClose={handleClose} onOpen={handleOpen} open={open} ariaLabel="SpeedDial tooltip example" icon={<img style={{ marginTop: '10px' }} src="./static/javascript-icon.svg" alt="" />}>
                             {actionsJs.map((action) => (
                                 <SpeedDialAction
                                     key={action.name}
@@ -68,7 +73,7 @@ const About = () => {
                     </div>
 
                     <div className="skill">
-                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#6df1d8', '&:hover': { bgcolor: '#6df1d8' } } }} onClose={handleClosePy} onOpen={handleOpenPy} open={openPy} ariaLabel="SpeedDial tooltip example" icon={<img src="./static/python-icon.svg" alt="" />}>
+                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#202124', '&:hover': { bgcolor: '#202124' } } }} onClose={handleClosePy} onOpen={handleOpenPy} open={openPy} ariaLabel="SpeedDial tooltip example" icon={<img src="./static/python-icon.svg" alt="" />}>
                             {actionsJs.map((action) => (
                                 <SpeedDialAction
                                     key={action.name}
@@ -84,7 +89,7 @@ const About = () => {
                     </div>
 
                     <div className="skill">
-                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#6df1d8', '&:hover': { bgcolor: '#6df1d8' } } }} onClose={handleCloseSol} onOpen={handleOpenSol} open={openSol} ariaLabel="SpeedDial tooltip example" icon={<img src="./static/solidity-icon.svg" alt="" />}>
+                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#202124', '&:hover': { bgcolor: '#202124' } } }} onClose={handleCloseSol} onOpen={handleOpenSol} open={openSol} ariaLabel="SpeedDial tooltip example" icon={<img src="./static/solidity-icon.svg" alt="" />}>
                             {actionsJs.map((action) => (
                                 <SpeedDialAction
                                     key={action.name}
@@ -100,7 +105,7 @@ const About = () => {
                     </div>
 
                     <div className="skill">
-                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#6df1d8', '&:hover': { bgcolor: '#6df1d8' } } }} onClose={handleCloseSol} onOpen={handleOpenSol} open={openSol} ariaLabel="SpeedDial tooltip example" icon={<img src="./static/java-icon.svg" alt="" />}>
+                        <SpeedDial sx={{ '& .MuiFab-primary': { width: 120, height: 120 } }} FabProps={{ sx: { bgcolor: '#202124', '&:hover': { bgcolor: '#202124' } } }} onClose={handleCloseJava} onOpen={handleOpenJava} open={openJava} ariaLabel="SpeedDial tooltip example" icon={<img src="./static/java-icon.svg" alt="" />}>
                             {actionsJs.map((action) => (
                                 <SpeedDialAction
                                     key={action.name}

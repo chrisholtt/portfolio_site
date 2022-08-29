@@ -6,7 +6,6 @@ const SubTitle = () => {
 
     const [opacity, setOpacity] = useState(1);
     const handleScroll = () => setOpacity(1 - (window.scrollY * 0.004))
-    console.log(opacity)
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);

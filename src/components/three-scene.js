@@ -6,11 +6,11 @@ class ThreeScene extends Component {
 
     componentDidMount() {
         // Loader
-        const normalTexture = new THREE.TextureLoader().load('../textures/normal-map2.png22')
+        const normalTexture = new THREE.TextureLoader().load('../textures/sick-normal.jpeg')
         // const displaceTexture = new THREE.TextureLoader().load('../textures/displace-map3.jpg')
 
         // Debug
-        const gui = new dat.GUI();
+        // const gui = new dat.GUI();
 
         //scene
         this.scene = new THREE.Scene()
@@ -19,8 +19,9 @@ class ThreeScene extends Component {
         const geometry = new THREE.ConeGeometry(6, 10, 4, 1, false, 0, 6.283185307179586);
 
         // Materials
-        const material = new THREE.MeshStandardMaterial();
-        material.color = new THREE.Color(0x000000);
+        // const material = new THREE.MeshStandardMaterial();
+        const material = new THREE.MeshNormalMaterial();
+        // material.color = new THREE.Color(0x000000);
         material.roughness = 0.25;
         material.metalness = 0.85;
         material.normalMap = normalTexture
@@ -49,21 +50,21 @@ class ThreeScene extends Component {
         pointLight2.position.set(-10, 10, -9)
         this.scene.add(pointLight2)
 
-        const light2 = gui.addFolder('light2')
-        light2.add(pointLight2.position, 'y').min(-10).max(10)
-        light2.add(pointLight2.position, 'x').min(-10).max(10)
-        light2.add(pointLight2.position, 'z').min(-100).max(100)
-        light2.add(pointLight2, 'intensity').min(0).max(100)
-        const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
-        this.scene.add(pointLightHelper2)
+        // const light2 = gui.addFolder('light2')
+        // light2.add(pointLight2.position, 'y').min(-10).max(10)
+        // light2.add(pointLight2.position, 'x').min(-10).max(10)
+        // light2.add(pointLight2.position, 'z').min(-100).max(100)
+        // light2.add(pointLight2, 'intensity').min(0).max(100)
+        // const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
+        // this.scene.add(pointLightHelper2)
 
-        const light2Color = {
-            color: 0xff0000
-        }
+        // const light2Color = {
+        //     color: 0xff0000
+        // }
 
-        light2.addColor(light2Color, 'color').onChange(() => {
-            pointLight2.color.set(light2Color.color)
-        })
+        // light2.addColor(light2Color, 'color').onChange(() => {
+        //     pointLight2.color.set(light2Color.color)
+        // })
 
 
         // blue light
@@ -71,35 +72,35 @@ class ThreeScene extends Component {
         pointLight3.position.set(10, 10, -10)
         this.scene.add(pointLight3)
 
-        const light3 = gui.addFolder('light3')
-        light3.add(pointLight3.position, 'y').min(-10).max(10)
-        light3.add(pointLight3.position, 'x').min(-10).max(10)
-        light3.add(pointLight3.position, 'z').min(-100).max(100)
-        light3.add(pointLight3, 'intensity').min(0).max(100)
+        // const light3 = gui.addFolder('light3')
+        // light3.add(pointLight3.position, 'y').min(-10).max(10)
+        // light3.add(pointLight3.position, 'x').min(-10).max(10)
+        // light3.add(pointLight3.position, 'z').min(-100).max(100)
+        // light3.add(pointLight3, 'intensity').min(0).max(100)
 
-        const light3Color = {
-            color: 0x0000ff
-        }
+        // const light3Color = {
+        //     color: 0x0000ff
+        // }
 
-        light3.addColor(light3Color, 'color').onChange(() => {
-            pointLight3.color.set(light3Color.color)
-        })
-        const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
-        this.scene.add(pointLightHelper3)
+        // light3.addColor(light3Color, 'color').onChange(() => {
+        //     pointLight3.color.set(light3Color.color)
+        // })
+        // const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
+        // this.scene.add(pointLightHelper3)
 
         // bluelight 2
         const pointLight4 = new THREE.PointLight(0x6df1d8, 80)
         pointLight4.position.set(-10, -10, -10)
         this.scene.add(pointLight4)
-        const pointLightHelper4 = new THREE.PointLightHelper(pointLight4, 1)
-        this.scene.add(pointLightHelper4)
+        // const pointLightHelper4 = new THREE.PointLightHelper(pointLight4, 1)
+        // this.scene.add(pointLightHelper4)
 
         // redlight 2
         const pointLight5 = new THREE.PointLight(0xd30cb8, 80)
         pointLight5.position.set(10, -10, -10)
         this.scene.add(pointLight5)
-        const pointLightHelper5 = new THREE.PointLightHelper(pointLight5, 1)
-        this.scene.add(pointLightHelper5)
+        // const pointLightHelper5 = new THREE.PointLightHelper(pointLight5, 1)
+        // this.scene.add(pointLightHelper5)
 
         // sizes
         const sizes = {

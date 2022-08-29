@@ -6,37 +6,45 @@ class ThreeScene2 extends Component {
 
     componentDidMount() {
         // Loader
-        const normalTexture = new THREE.TextureLoader().load('../textures/normal-map2.png22')
-        // const displaceTexture = new THREE.TextureLoader().load('../textures/displace-map3.jpg')
-
-        // Debug
-        const gui = new dat.GUI();
+        const normalTexture = new THREE.TextureLoader().load('../textures/sick-normal.jpeg')
+        const displaceTexture = new THREE.TextureLoader().load('../textures/sick-displace.png')
 
         //scene
         this.scene = new THREE.Scene()
 
         // Objects
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
+        // const geometry = new THREE.BoxGeometry(1, 1, 1);
+        const geometry = new THREE.SphereGeometry(5, 15, 16);
+        // const plane = new THREE.BoxGeometry(10, 10, 10);
+
+
 
         // Materials
-        const material = new THREE.MeshStandardMaterial();
-        material.color = new THREE.Color(0x000000);
-        material.roughness = 0.3;
-        material.metalness = 0.85;
+        const material = new THREE.MeshNormalMaterial;
+
+        // material.color = new THREE.Color(0x0ff00);
+        // material.roughness = 0.3;
+        // material.metalness = 0.85; 
         material.normalMap = normalTexture
-        // material.displacementMap = displaceTexture
+        material.displacementMap = displaceTexture
         // material.transparent = true
         // material.opacity = 0.85;
 
+
+
+
         // Mesh 
         this.diamond = new THREE.Mesh(geometry, material)
-        this.diamond.position.y = 8
-        this.diamond.position.x = -8
+        this.diamond.position.y = -4
+
+        this.diamond.position.x = 4
         this.scene.add(this.diamond)
 
         this.diamond2 = new THREE.Mesh(geometry, material)
-        this.diamond2.position.y = 3
+        this.diamond2.position.y = 0
         this.diamond2.position.x = 10
+
+
         this.scene.add(this.diamond2)
 
         this.diamond3 = new THREE.Mesh(geometry, material)
@@ -53,6 +61,7 @@ class ThreeScene2 extends Component {
 
         this.diamond5 = new THREE.Mesh(geometry, material)
         this.diamond5.position.y = -7
+
         this.diamond5.position.x = -13
         this.diamond5.position.z = -5
         this.scene.add(this.diamond5)
@@ -69,21 +78,6 @@ class ThreeScene2 extends Component {
         pointLight2.position.set(-10, 10, -9)
         this.scene.add(pointLight2)
 
-        const light2 = gui.addFolder('light2')
-        light2.add(pointLight2.position, 'y').min(-10).max(10)
-        light2.add(pointLight2.position, 'x').min(-10).max(10)
-        light2.add(pointLight2.position, 'z').min(-100).max(100)
-        light2.add(pointLight2, 'intensity').min(0).max(100)
-        const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
-        // this.scene.add(pointLightHelper2)
-
-        const light2Color = {
-            color: 0xff0000
-        }
-
-        light2.addColor(light2Color, 'color').onChange(() => {
-            pointLight2.color.set(light2Color.color)
-        })
 
 
         // blue light
@@ -91,34 +85,17 @@ class ThreeScene2 extends Component {
         pointLight3.position.set(10, 10, -10)
         this.scene.add(pointLight3)
 
-        const light3 = gui.addFolder('light3')
-        light3.add(pointLight3.position, 'y').min(-10).max(10)
-        light3.add(pointLight3.position, 'x').min(-10).max(10)
-        light3.add(pointLight3.position, 'z').min(-100).max(100)
-        light3.add(pointLight3, 'intensity').min(0).max(100)
-
-        const light3Color = {
-            color: 0x0000ff
-        }
-
-        light3.addColor(light3Color, 'color').onChange(() => {
-            pointLight3.color.set(light3Color.color)
-        })
-        const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, 1)
-        // this.scene.add(pointLightHelper3)
 
         // bluelight 2
         const pointLight4 = new THREE.PointLight(0x6df1d8, 80)
         pointLight4.position.set(-10, -10, -10)
         this.scene.add(pointLight4)
-        const pointLightHelper4 = new THREE.PointLightHelper(pointLight4, 1)
         // this.scene.add(pointLightHelper4)
 
         // redlight 2
         const pointLight5 = new THREE.PointLight(0xd30cb8, 80)
         pointLight5.position.set(10, -10, -10)
         this.scene.add(pointLight5)
-        const pointLightHelper5 = new THREE.PointLightHelper(pointLight5, 1)
         // this.scene.add(pointLightHelper5)
 
         // sizes
