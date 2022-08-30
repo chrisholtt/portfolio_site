@@ -12,6 +12,7 @@ const TextSphere = () => {
         '6KB', 'v2.x',
     ];
 
+    console.log('hiiii')
     TagCloud(container, texts, options);
 
 

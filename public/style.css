@@ -69,36 +69,47 @@ section {
 .chris {
     font-size: 8rem;
     color: whitesmoke;
+    opacity: 0.8;
     font-family: 'Roboto', sans-serif;
     /* position: absolute; */
     z-index: 100;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     margin: 15px;
+    text-shadow: 0px 0px 2px #000;
+    
 }
 
 .holt {
+    opacity: 0.8;
     font-size: 8rem;
     color: whitesmoke;
     font-family: 'Roboto', sans-serif;
     /* position: absolute; */
     z-index: 100;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     margin: 15px;
+    text-shadow: 0px 0px 2px #000;
 }
 
 nav {
     width: 100%;
-    transition: all 300ms ease-in-out;
+    transition: all 750ms ease-in-out;
     position: fixed;
     z-index: 10000;
-    background: repeating-linear-gradient(
+    /* background: repeating-linear-gradient(
   45deg,
   #000000,
   #000000 5px,
   #00000000 5px,
   #ffffff00 9px
-);
+); */
+
+/* background: rgba(255, 255, 255, 0.15); */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
 }
+
 
 nav ul {
     align-items: center;
@@ -111,6 +122,8 @@ nav ul {
 .scroll-down {
     transform: translate3d(0, -100%, 0);
 }
+
+
 
 
 /* html {
@@ -140,6 +153,12 @@ section {
 .sec3 {
 background: rgb(60,60,60);
 background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(10,10,10,1) 100%);
+width: 100vw;
+}
+
+.sec4 {
+background: rgb(60,60,60);
+background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
 width: 100vw;
 }
 
@@ -201,35 +220,6 @@ display: flex;
     margin-left: 10px;
 }
 
-.progress-wrapper {
-    position: fixed;
-    display: flex;
-    transform: rotate(90deg);
-    left: 90%;
-    top: 50%;
-}
-
-.progress-bar {
-    width: 60px;
-    height: 20px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin: 2px;
-
-}
-
-.progress-section {
-    width: 60px;
-    height: 100%;
-    border: 2px solid white;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: 400ms ease-in-out all;
-    opacity: 0.9;
-}
-
 
 .about-text-wrapper{
     display: flex;
@@ -240,9 +230,13 @@ display: flex;
     color: white;
 }
 
-.about-text-wrapper div {
+.about-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    margin-top: 15vh;
+    top: 10vh;
 }
 
 .background-text{
@@ -255,7 +249,7 @@ pointer-events: none;
     position: absolute;
     bottom: 0;
     font-family: 'Roboto', sans-serif;
-    opacity: 0.2;
+    opacity: 0.1;
 }
 
 .contact-wrapper{
@@ -282,3 +276,98 @@ align-items: center;
     color: white;
 }
 
+.progress-wrapper {
+    position: fixed;
+    display: flex;
+    transform: rotate(90deg);
+    left: 90%;
+    top: 50%;
+    z-index: 100;
+    font-size: 2rem;
+}
+
+.non-active{
+    margin: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    opacity: 0.5;
+    background: white;
+    transition: 500ms all ease-in-out;
+}
+
+.active {
+    transform: rotate(135deg);
+    border: 1px solid white;
+    background: none;
+    box-shadow: 0px 0px 6px 3px #888888;
+    /* transform: scale(1.3); */
+    transition: 500ms all ease-in-out;
+}
+
+.projects-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-top: 100px;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 30vw;
+    height: 250px;
+    background: #202124;
+    border-radius: 2px;
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.project-colour-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    overflow: hidden;
+}
+
+@keyframes sickBounce {
+    0% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: -200px;
+    }
+
+    100% {
+        margin-top: 0px;
+    }
+}
+
+.sick-banner{
+    animation-duration: 10000ms;
+    animation-name: sickBounce;
+    animation-iteration-count: infinite;
+    width: 100%;
+}
+
+.hr{
+    width: 70vw;
+}

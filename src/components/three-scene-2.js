@@ -14,7 +14,7 @@ class ThreeScene2 extends Component {
 
         // Objects
         // const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const geometry = new THREE.SphereGeometry(5, 15, 16);
+        const geometry = new THREE.SphereGeometry(5, 30, 30);
         // const plane = new THREE.BoxGeometry(10, 10, 10);
 
 

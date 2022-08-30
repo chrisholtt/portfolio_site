@@ -4,8 +4,8 @@ import ContactBox from './ContactBox'
 const Contact = () => {
     return (
         <div className='contact-wrapper'>
-            <h1>Like what ya see ya fucking weeb?</h1>
-            <h2>Get in touch!</h2>
+            <h1>Contact Me</h1>
+            <hr className='hr' />
 
             <div style={{ display: 'flex' }}>
                 <ContactBox details={"💩 LinkedIn"} />

@@ -9,8 +9,7 @@ import Contact from './containers/Contact'
 import SubTitle from './components/SubTitle'
 import BackgroundText from './components/BackgroundText'
 import TextSphere from './components/TextSphere';
-// import { Link } from 'react-scroll'
-
+import Projects from './containers/Projects';
 
 
 function App() {
@@ -38,8 +37,14 @@ function App() {
       </section>
 
       <section className='sec3'>
+        {/* <TextSphere /> */}
+        <Projects />
+        <BackgroundText text={'PROJECTS'} />
+      </section>
+
+      <section className='sec4'>
         <Contact />
-        <TextSphere />
+
         <BackgroundText text={'CONTACT'} />
       </section>
 
