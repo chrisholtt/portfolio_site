@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faSquareEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
 
@@ -50,8 +53,20 @@ const Navbar = () => {
         <>
             <nav className={sticky}>
                 <ul>
-                    <li>Chris Holt</li>
-                    <Button variant="contained" startIcon={<ContactPageIcon />} onClick={handleOpen}>Contact</Button>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                        <li>CH</li>
+                    </Link>
+                    <li>
+                        <a href="https://github.com/chrisholtt" target="_blank">
+                            <FontAwesomeIcon icon={faGithubSquare} style={{ padding: '5px' }} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/chrisphilholt/" target="_blank">
+                            <FontAwesomeIcon icon={faLinkedin} style={{ padding: '5px' }} />
+                        </a>
+                        <a href="">
+                            <FontAwesomeIcon icon={faSquareEnvelope} style={{ padding: '5px' }} />
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
