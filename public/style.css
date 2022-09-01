@@ -24,8 +24,10 @@ nav ul li {
     left: 0;
     outline: none;
     pointer-events: none;
+    /* width: 100vw; */
     /* mix-blend-mode: difference; */
 }
+
 
 .webgl2 {
     position: absolute;

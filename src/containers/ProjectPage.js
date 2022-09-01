@@ -21,7 +21,7 @@ const ProjectPage = ({ accent, title, lang }) => {
                         <div className="project-page-container-inner-inner">
                             <h2 style={{ color: accent }}>{lang}</h2>
                             <h1 style={{ fontSize: '3rem' }}>{title}</h1>
-                            <hr style={{ border: `0.5px solid ${accent}` }} />
+                            <hr style={{ border: `1px solid ${accent}` }} />
 
                         </div>
 

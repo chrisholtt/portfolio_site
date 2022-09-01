@@ -19,7 +19,7 @@ const Projects = () => {
                 <Project color={"#e4d44c"} lang={'JAVASCRIPT'} title={'Cryptocurrency App'} description={'Web app using React and Chart JS that tracks and charts the top 100 coins.'} />
                 <Project color={"#2596be"} lang={'PYTHON'} title={'Calorie tracker'} description={'Full stack web app using Python, Flask and postgreSQL'} />
                 <Project color={"#e4d44c"} lang={'JAVASCRIPT'} title={'Portfolio site'} description={'A site to call my own, made using Three.js, WebGL, and React'} />
-                <Project color={"#e4d44c"} lang={'JAVASCRIPT'} title={'Cryptocurrency App'} description={'Web app using React and Chart JS that tracks and charts the top 100 coins.'} />
+                <Project color={"#96d9c3"} lang={'SOLIDITY'} title={'NFT PROJECT'} description={'NFT project on the Ethereum blockchain. React Dapp, Solidity smart contract and Webflow.'} />
             </div>
 
         </div>

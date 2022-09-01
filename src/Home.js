@@ -22,8 +22,8 @@ const Home = () => {
                 <SubTitle />
                 <div className='webgl'>
                     <ThreeScene />
-                    <BackgroundText text={'INDEX'} />
                 </div>
+                <BackgroundText text={'INDEX'} />
             </section>
 
             <section className='sec2'>
