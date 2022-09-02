@@ -12,7 +12,7 @@ const Project = ({ color, lang, title, description }) => {
                 </div>
                 <h3 style={{ color: color }}>{lang}</h3>
                 <h1>{title}</h1>
-                <p>{description}</p>
+                <p style={{ color: 'lightgray' }}>{description}</p>
 
             </div>
         </>

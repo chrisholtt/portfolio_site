@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+input, select, textarea{
+    color: lightgray;
+}
+
 body {
     overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+a{
+    color: whitesmoke;
 }
 
 nav ul li {
@@ -165,9 +173,16 @@ width: 100vw;
 }
 
 .sec4 {
-background: rgb(60,60,60);
-background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
-width: 100vw;
+    background: rgb(60,60,60);
+    background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
+    width: 100vw;
+}
+
+.sec-project{
+    background: rgb(60,60,60);
+    background: linear-gradient(180deg, rgba(35,35,35,1) 0%, rgba(10,10,10,1) 100%);
+    width: 100vw;
+    height: 200vh;
 }
 
 .about-wrapper{
@@ -243,8 +258,6 @@ display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 10vh;
 }
 
 .background-text{
@@ -345,7 +358,6 @@ align-items: center;
     color: whitesmoke;
     padding: 10px;
     cursor: pointer;
-
 }
 
 .project-colour-bar {
@@ -397,8 +409,9 @@ align-items: center;
     /* padding: 10px; */
     color: whitesmoke;
     margin-top: 10vh;
+    align-items: center;
     width: 90vw;
-    height: 85vh;
+    height: 185vh;
     border-left: 1px solid rgba(128, 128, 128, 0.3);
     border-right: 1px solid rgba(128, 128, 128, 0.3);
     border-bottom: 1px solid rgba(128, 128, 128, 0.3);
@@ -415,7 +428,7 @@ align-items: center;
     z-index: 1000;
 }
 
-.project-page-back-container{
+.project-page-back-container {
     top: 7vh;
     left: 5vw;
     position: absolute;
@@ -428,4 +441,33 @@ align-items: center;
 
 .project-page-back-container * {
     padding: 5px;
+}
+
+.project-carousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.carousel-img{
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    color: lightgray;
+}
+
+.form-box{
+    background: #202124;
+    min-width: 35vw;
+    padding: 20px;
+    border: none;
+    margin: 10px;
+}
+
+.top-text-space{
+    height: 60px;
 }
