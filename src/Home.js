@@ -10,6 +10,8 @@ import Contact from './containers/Contact'
 import SubTitle from './components/SubTitle'
 import BackgroundText from './components/BackgroundText'
 import Projects from './containers/Projects';
+// import Container from '@mui/material/Container';
+
 
 
 const Home = () => {
