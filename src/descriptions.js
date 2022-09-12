@@ -12,7 +12,11 @@ export const nftInfo = {
     ],
     reflections: [
         "Managing communities is a job in itself"
-    ]
+    ],
+    links: {
+        link: 'https://test-407fa6.webflow.io/',
+        comment: 'CRAZY BEANZ'
+    }
 }
 
 export const blackjackInfo = {
@@ -31,7 +35,11 @@ export const blackjackInfo = {
     reflections: [
         "MaterialUI looks great but isn't the most flexible",
         "Needs more emphasis on making the art-style unique."
-    ]
+    ],
+    links: {
+        link: '',
+        comment: 'n/a'
+    }
 }
 
 export const cryptoInfo = {
@@ -48,25 +56,32 @@ export const cryptoInfo = {
     ],
     reflections: [
         "Chart.js is good for simple charting but does not have complex functionality, like HighCharts.",
-    ]
+    ],
+    links: {
+        link: '',
+        comment: 'n/a'
+    }
 }
 
 
 export const calorieInfo = {
-    brief: 'Build a web app that allows a user to track the top 100 cryptocurrencies, create favourites and view charts for different time scales.',
-    description: "A simple web app made over a weekend. Users can can track the top 100 coins and create a favourite list. The app features a search bar and charting system, users can select a time scale which submits a new API request to Coingecko to display historic price data.",
+    brief: 'Create a web app that allows a user to set calorie targets for each day, create food types and set reminders. Users should be able to confirm that they have eaten a food and have their progress update.',
+    description: "Full stack web-app using Python, Flask and PostgreSQL. Allows multiple users to track calories and create food types and assign them to specific days. Users can create food types with a calorie value and save them to the database, users can see all food types created by other users. Foods can be added to specific days and checked if they've been eaten or not, the target calories will update dynamically and the progress bar will reflect that.",
     challenges: [
-        "Coingecko API only allows a certain amount of calls per minute",
-        "Labelling x-axis for different time scales."
+        "All the functionality it present on a single page for simplicity.",
+        "Made using Flask so quite heavy, every action needs to be computed on the server and results in a new page load with database querry."
     ],
     tools: [
-        "Languages: Javascript, React.",
-        "API's: Coingecko.",
-        "Libraries: Chart.js."
+        "Languages: Python",
+        "Framework: Flask"
     ],
     reflections: [
-        "Chart.js is good for simple charting but does not have complex functionality, like HighCharts.",
-    ]
+        "Interesting learning experience but I was limited to using Flask so the UI is relatively basic."
+    ],
+    links: {
+        link: '',
+        comment: 'n/a'
+    }
 }
 
 export const siteInfo = {
@@ -83,5 +98,9 @@ export const siteInfo = {
     reflections: [
         "Three.js is an awesome library.",
         "React Three Fiber would be better suited."
-    ]
+    ],
+    links: {
+        link: 'https://www.chrisholt.codes',
+        comment: 'Portfolio site'
+    }
 }

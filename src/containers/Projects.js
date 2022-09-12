@@ -11,7 +11,7 @@ const Projects = () => {
             <h2 style={{ color: 'white' }}>My Projects</h2>
             <hr className='hr' />
             <br />
-            <p style={{ color: 'white' }} className='hr'>A hand-picked collection of projects I've created using various languages. Feel free to check out my github <a href="https://github.com/chrisholtt" target='_blank'>here</a>.</p>
+            <p style={{ color: 'white' }} className='hr'>A hand-picked collection of projects I've created using various languages. Feel free to check out my github <a href="https://github.com/chrisholtt" target='_blank'>here</a>. </p>
             <div className="projects-container">
                 <Link to="/calorie-tracker" style={{ textDecoration: 'none' }} >
                     <Project color={"#2596be"} lang={'PYTHON'} title={'Calorie tracker'} description={'Full stack web app using Python, Flask and postgreSQL'} />

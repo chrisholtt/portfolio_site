@@ -52,8 +52,8 @@ const ProjectPage = ({ slides, accent, title, lang, infoObj }) => {
 
     return (
         <>
-            <Navbar />
             <section className='sec-project'>
+                <Navbar />
                 <div className='project-page-container'>
                     <Link to="/" className='project-page-back-container'>
                         <FontAwesomeIcon icon={faArrowLeftLong} style={{ color: 'white', fontSize: '1.5rem' }} />
@@ -111,6 +111,10 @@ const ProjectPage = ({ slides, accent, title, lang, infoObj }) => {
                                     <ul>
                                         {reflectionsNodes}
                                     </ul>
+                                </div>
+                                <div>
+                                    <h2 style={{ color: accent }}>LINKS</h2>
+                                    {infoObj.links.link ? <a href={infoObj.links.link} target="_blank">{infoObj.links.comment}</a> : <h4>{infoObj.links.comment}</h4>}
                                 </div>
                             </div>
                         </div>

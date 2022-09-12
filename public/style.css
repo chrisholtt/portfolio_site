@@ -6,16 +6,13 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-
 }
 
 input, select, textarea{
     color: lightgray;
 }
 
-body {
-    overflow-x: hidden;
-}
+
 
 html {
     scroll-behavior: smooth;
@@ -38,7 +35,6 @@ nav ul li {
     left: 0;
     outline: none;
     pointer-events: none;
-    /* width: 100vw; */
     /* mix-blend-mode: difference; */
 }
 
@@ -51,6 +47,8 @@ nav ul li {
 
 section {
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .container {
@@ -68,7 +66,7 @@ section {
     margin-left: auto; 
     margin-right: auto; 
     bottom: 0;
-    margin-bottom: 38vh;
+    margin-bottom: 35vh;
     z-index: 100;
     width: 500px;
     display: flex;
@@ -188,12 +186,13 @@ width: 100vw;
     background: rgb(60,60,60);
     background: linear-gradient(180deg, rgba(35,35,35,1) 0%, rgba(10,10,10,1) 100%);
     width: 100vw;
-    height: 200vh;
+    height: auto;
+    /* Height was 200vh before trying to fix */
 }
 
 .about-wrapper{
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     margin: auto;
     left: 0;
     right: 0;
@@ -211,6 +210,7 @@ display: flex;
 }
 
 
+
 .skill-border {
     width: 180px;
     height: 180px;
@@ -226,6 +226,7 @@ display: flex;
 
 .skill-top * {
     padding: 0px 20px;
+    z-index: 100;
 }
 
 /* EACH SKILL DIAL */
@@ -338,6 +339,7 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .projects-container{
@@ -490,6 +492,22 @@ align-items: center;
     margin: 10px;
 }
 
+input:focus{
+    outline: none;
+}
+
+.form-box input {
+    border: none;
+}
+
 .top-text-space{
     height: 60px;
 }
+
+.speed-dial-img{
+    min-width: 80px;
+    width: 150px;
+    max-width: 150px;
+    overflow: hidden;
+}
+

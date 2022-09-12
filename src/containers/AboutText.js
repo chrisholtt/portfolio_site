@@ -9,7 +9,7 @@ const AboutText = () => {
                 <hr className='hr' />
                 <br />
                 <p className='hr'>
-                    I am a junior developer from Scotland. I come from a science background and developed an interest in coding after creating my own NFT project. I want to make memorable experiences and improve people's lives with technology and being a developer allows me to do that.
+                    I'm Chris, a junior developer from Edinburgh. I developed a passion for coding after discovering blockchain technologies in 2021, I want to create memorable experiences and improve people's lives through technology. I'm constanly expanding my skill set and enjoy keeping up to date with the latest advancements in tech.
                 </p>
             </div>
         </div>

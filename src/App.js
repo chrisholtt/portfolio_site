@@ -35,9 +35,7 @@ function App() {
   ]
 
   const calorieSlides = [
-    "./static/projects/crypto1.png",
-    "./static/projects/crypto2.png",
-    "./static/projects/crypto3.png",
+    "./static/projects/calorie.png"
   ]
 
   return (

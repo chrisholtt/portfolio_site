@@ -28,7 +28,7 @@ const Contact = () => {
                 console.log(error.text);
             });
 
-        alert(`Success! Thank you for the inquiry, I'll get back to you as soon as I can. 😃`)
+        alert(`Success! Thank you for the enquiry, I'll get back to you as soon as I can. 😃`)
 
         setForm({
             name: '',
@@ -46,7 +46,7 @@ const Contact = () => {
             <h1>Contact Me</h1>
             <hr className='hr' />
             <br />
-            <p className='hr' style={{ color: 'white' }}>Want to connect? Reach out to me on <a href="https://www.linkedin.com/in/chrisphilholt/" target='_blank'>LinkedIn.</a> However, if you have any other requests or inquiries, fill out the form below and I'll get back to you quickly.</p>
+            <p className='hr' style={{ color: 'white' }}>Want to connect? Reach out to me on <a href="https://www.linkedin.com/in/chrisphilholt/" target='_blank'>LinkedIn.</a> However, if you have any other requests or enquiries, fill out the form below and I'll get back to you quickly.</p>
 
             <br />
             <div style={{ display: 'flex' }}>
@@ -54,11 +54,11 @@ const Contact = () => {
                 <div className="form-container">
                     <form onSubmit={handleSubmit} className='form'>
                         <div>
-                            <input type="text" placeholder='Name' className='form-box' name='name' onChange={handleChange} value={form.name} />
-                            <input type="email" placeholder='E-mail' className='form-box' name='email' onChange={handleChange} value={form.email} />
+                            <input type="text" placeholder='Name' className='form-box' name='name' required onChange={handleChange} value={form.name} />
+                            <input type="email" placeholder='E-mail' className='form-box' name='email' required onChange={handleChange} value={form.email} />
                         </div>
-                        <input type="text" placeholder='Subject' className='form-box' name='subject' onChange={handleChange} value={form.subject} />
-                        <input type="text" placeholder='Message' className='form-box' name='message' onChange={handleChange} value={form.message} />
+                        <input type="text" placeholder='Subject' className='form-box' name='subject' required onChange={handleChange} value={form.subject} />
+                        <input type="text" placeholder='Message' className='form-box' name='message' required onChange={handleChange} value={form.message} />
                         <input type="submit" className='form-box' style={{ cursor: 'pointer' }} />
                     </form>
                 </div>
