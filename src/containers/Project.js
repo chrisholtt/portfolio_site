@@ -11,7 +11,7 @@ const Project = ({ color, lang, title, description }) => {
                     {show && <img src="textures/sick-normal.jpeg" alt="" className='sick-banner' />}
                 </div>
                 <h3 style={{ color: color }}>{lang}</h3>
-                <h1>{title}</h1>
+                <h2>{title}</h2>
                 <p style={{ color: 'lightgray' }}>{description}</p>
 
             </div>

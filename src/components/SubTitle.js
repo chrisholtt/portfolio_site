@@ -22,7 +22,7 @@ const SubTitle = () => {
 
     return (
         <div className='sub-title' style={{ opacity: `${opacity}`, transform: `translateY(${- offSetY}px)` }}>
-            <h1>Creative developer</h1>
+            <h1 className='sub-title-text'>Creative developer</h1>
         </div>
 
     )
