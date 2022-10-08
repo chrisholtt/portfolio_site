@@ -10,7 +10,7 @@ import { faHelmetSafety } from '@fortawesome/free-solid-svg-icons';
 import { faCubes } from '@fortawesome/free-solid-svg-icons';
 import { faVial } from '@fortawesome/free-solid-svg-icons';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
-import { faCircleNodes } from '@fortawesome/free-solid-svg-icons';
+import { faHeadphones } from '@fortawesome/free-solid-svg-icons';
 import { faEthereum } from '@fortawesome/free-brands-svg-icons'
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
@@ -50,7 +50,7 @@ const About = () => {
     const actionsSolidity = [
         { icon: <FontAwesomeIcon icon={faHelmetSafety} />, name: 'hardhat' },
         { icon: <FontAwesomeIcon icon={faEthereum} />, name: 'ethereum' },
-        { icon: <FontAwesomeIcon icon={faCircleNodes} />, name: "dapp's" }
+        { icon: <FontAwesomeIcon icon={faHeadphones} />, name: "REMIX" }
 
     ]
 
@@ -85,7 +85,7 @@ const About = () => {
 
             <div className='skill-wrapper'>
                 <div className="skill-top" >
-                    <Grid container spacing={2}>
+                    <Grid container spacing={1}>
                         <Grid item xs={3}>
                             <div className='skill'>
                                 <SpeedDial sx={{ '& .MuiFab-primary': { width: { xs: 60, md: 90, lg: 120 }, height: { xs: 60, md: 90, lg: 120 } } }} FabProps={{ sx: { bgcolor: '#202124', '&:hover': { bgcolor: '#202124' } } }} onClose={handleClose} onOpen={handleOpen} open={open} ariaLabel="SpeedDial tooltip example" icon={<img className='speed-dial-img' src="./static/javascript-icon.svg" alt="" />}>

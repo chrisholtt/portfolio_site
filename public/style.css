@@ -1,10 +1,10 @@
 @media only screen and (min-width: 0px) {
 
     .chris{
-        font-size: 5.5rem;
+        font-size: 4rem;
     }
     .holt{
-        font-size: 5.5rem;
+        font-size: 4rem;
     }
     .sub-title-text{
         font-size: 2rem;
@@ -20,10 +20,10 @@
 @media only screen and (min-width: 600px) {
 
     .chris{
-        font-size: 7rem;
+        font-size: 6rem;
     }
     .holt{
-        font-size: 7rem;
+        font-size: 6rem;
     }
 }
 @media only screen and (min-width: 1200px) {
@@ -60,6 +60,15 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
+li {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
 input, select, textarea{
     color: lightgray;
 }
@@ -94,6 +103,7 @@ nav ul li {
 .webgl2 {
     position: absolute;
     pointer-events: none;
+    bottom: 3vh;
     outline: none;
 }
 
@@ -110,13 +120,17 @@ section {
     justify-content: center;
 }
 
+.sub-title-wrapper{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .sub-title {
     position: absolute; 
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
     bottom: 38vh;
     /* margin-bottom: 38vh; */
     z-index: 1000;
@@ -226,6 +240,7 @@ section {
 background: rgb(60,60,60);
 background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(10,10,10,1) 100%);
 width: 100vw;
+overflow: visible;
 }
 
 .sec4 {
@@ -316,10 +331,11 @@ display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 100000;
+
 }
 
 .background-text{
-font-size: 10rem;
 color: grey;
 pointer-events: none;
 }
@@ -327,6 +343,7 @@ pointer-events: none;
 .background-text h1 {
     position: absolute;
     bottom: 0;
+    font-size: 6rem;
     font-family: 'Roboto', sans-serif;
     opacity: 0.1;
 }
@@ -391,16 +408,19 @@ align-items: center;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* overflow: visible; */
 }
 
 .projects-container{
     display: flex;
     align-items: center;
+    padding: 20px;
     justify-content: center;
     /* flex-wrap: wrap; */
     width: 100vw;
     z-index: 100;
     margin-top: 100px;
+    /* overflow: visible; */
 }
 
 .project {
@@ -410,13 +430,14 @@ align-items: center;
     align-items: center;
     justify-content: space-around;
     min-width: 30vw;
-    max-width: 30vw;
-    height: 250px;
+    max-width: 45vw;
+    padding: 5px;
+    min-height: 20vh;    
     background: #202124;
     border-radius: 2px;
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
-    padding: 20px;
+    padding: 5px;
     cursor: pointer;
 }
 
@@ -478,7 +499,6 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     padding: 5vw;
-
 }
 
 .project-page-inner-banner{

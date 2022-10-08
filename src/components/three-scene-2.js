@@ -125,7 +125,7 @@ class ThreeScene2 extends Component {
         this.camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
         this.camera.position.x = 0
         this.camera.position.y = 0
-        this.camera.position.z = 15
+        this.camera.position.z = 20
         this.scene.add(this.camera)
 
 
@@ -154,7 +154,7 @@ class ThreeScene2 extends Component {
 
         const moveDiamond = (element) => {
             // this.diamond.position.x = (window.scrollY * 0.002)
-            this.camera.position.z = (window.scrollY * 0.02)
+            this.camera.position.z = (window.scrollY * 0.03)
 
 
             return () => window.removeEventListener('scroll', moveDiamond)

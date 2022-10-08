@@ -66,7 +66,7 @@ const ProjectPage = ({ slides, accent, title, lang, infoObj }) => {
                         <div className="project-page-container-inner-inner">
                             <h2 style={{ color: accent }}>{lang}</h2>
                             {/* <Typography variant='h4'> */}
-                            <h1>{title}</h1>
+                            <h2>{title}</h2>
                             {/* </Typography> */}
 
                             <div className="project-video-container">
@@ -85,6 +85,10 @@ const ProjectPage = ({ slides, accent, title, lang, infoObj }) => {
 
                             <div className="project-description-container">
 
+                                <div>
+                                    <h2 style={{ color: accent }}>LINKS</h2>
+                                    {infoObj.links.link ? <a href={infoObj.links.link} target="_blank">{infoObj.links.comment}</a> : <h4>{infoObj.links.comment}</h4>}
+                                </div>
                                 <div>
                                     <h2 style={{ color: accent }}>BRIEF</h2>
                                     <p>{infoObj.brief}</p>
@@ -112,11 +116,9 @@ const ProjectPage = ({ slides, accent, title, lang, infoObj }) => {
                                         {reflectionsNodes}
                                     </ul>
                                 </div>
-                                <div>
-                                    <h2 style={{ color: accent }}>LINKS</h2>
-                                    {infoObj.links.link ? <a href={infoObj.links.link} target="_blank">{infoObj.links.comment}</a> : <h4>{infoObj.links.comment}</h4>}
-                                </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
