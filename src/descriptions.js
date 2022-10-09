@@ -104,3 +104,26 @@ export const siteInfo = {
         comment: 'Portfolio site'
     }
 }
+
+export const poolInfo = {
+    brief: 'Build a web3 browser dApp with DEX, charting and custom lottery smart contracts.',
+    description: "Crypto lottery smart contracts deployed on the Polygon network. Users will need Metamask or Coinbase Wallet browser extension and hold Polygon currency to enter the lotteries. Once the lottery is full a winner will be chosen at random and will have all the money in the pool sent to them.",
+    challenges: [
+        "Immutable nature of smart-contracts lead to a lot of testing before deployment.",
+        "Not much learning material out there for building dApp's"
+    ],
+    tools: [
+        "Languages: Javascript, React, Solidity.",
+        "Libraries: Web3.js MaterialUI, Openzeppelin",
+        "API's: Coingecko, Uniswap, 0x."
+    ],
+    reflections: [
+        "Polygon is cheaper than Ethereum but is still very inaccessible for most people.",
+        "The EVM, Ethereum virtual machine is a deterministic, being deterministic means that for the same starting conditions, and given the same inputs, the same result will occur, even if that result is a smart contract running forever. This can have implications when trying to use random numbers like I did in PoolBuddies. In the future I would probably use Chainlinks VRF random number service."
+
+    ],
+    links: {
+        link: 'https://pool-buddies.netlify.app/',
+        comment: 'PoolBuddies'
+    }
+}

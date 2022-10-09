@@ -46,7 +46,9 @@ const Projects = () => {
                     </Grid>
 
                     <Grid item lg={4} xs={6}>
-                        <Project color={"#2596be"} lang={'COMING SOON'} title={'COMING SOON'} description={'COMING SOON'} />
+                        <Link to="pool-project" style={{ textDecoration: 'none' }}>
+                            <Project color={"#96d9c3"} lang={'SOLIDITY'} title={'Pool Buddies'} description={'React dApp, DEX with cusom lottery smart contracts deployed on Polygon mainnet.'} />
+                        </Link>
                     </Grid>
                 </Grid>
 

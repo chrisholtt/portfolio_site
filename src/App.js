@@ -3,7 +3,7 @@ import Home from './Home';
 import ProjectPage from './containers/ProjectPage';
 
 // Project info imports:
-import { nftInfo, blackjackInfo, cryptoInfo, calorieInfo, siteInfo } from './descriptions';
+import { nftInfo, blackjackInfo, cryptoInfo, calorieInfo, siteInfo, poolInfo } from './descriptions';
 
 function App() {
 
@@ -31,11 +31,14 @@ function App() {
   const siteSlides = [
     "./static/projects/site1.png",
     "./static/projects/site2.png"
-
   ]
 
   const calorieSlides = [
     "./static/projects/calorie.png"
+  ]
+
+  const poolSlides = [
+    "./static/projects/pool1.gif"
   ]
 
   return (
@@ -47,6 +50,7 @@ function App() {
         <Route path='/nft-project' element={<ProjectPage slides={nftSlides} accent={'#96d9c3'} title={'NFT project on the Ethereum blockchain. React Dapp, Solidity smart contract and Webflow.'} lang={'SOLIDITY'} infoObj={nftInfo} />} />
         <Route path='/coin-project' element={<ProjectPage slides={cryptoSlides} accent={'#e4d44c'} title={'Web app using React and Chart JS that tracks and charts the top 100 coins.'} lang={'JAVASCRIPT'} infoObj={cryptoInfo} />} />
         <Route path='/site-project' element={<ProjectPage slides={siteSlides} accent={'#e4d44c'} title={'A site to call my own, made using Three.js, WebGL, and React'} lang={'JAVASCRIPT'} infoObj={siteInfo} />} />
+        <Route path='/pool-project' element={<ProjectPage slides={poolSlides} accent={'#96d9c3'} title={'React dApp, DEX with cusom lottery smart contracts deployed on Polygon mainnet.'} lang={'SOLIDITY'} infoObj={poolInfo} />} />
       </Routes>
     </>
   );

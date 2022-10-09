@@ -63,9 +63,10 @@ const Navbar = () => {
                         <a href="https://www.linkedin.com/in/chrisphilholt/" target="_blank">
                             <FontAwesomeIcon icon={faLinkedin} style={{ padding: '5px' }} />
                         </a>
-                        <a href="">
+                        <a href="CV.pdf" download="Chris-Holts-CV">
                             <FontAwesomeIcon icon={faSquareEnvelope} style={{ padding: '5px' }} />
                         </a>
+
                     </li>
                 </ul>
             </nav>
