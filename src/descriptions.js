@@ -110,6 +110,7 @@ export const poolInfo = {
     description: "Crypto lottery smart contracts deployed on the Polygon network. Users will need Metamask or Coinbase Wallet browser extension and hold Polygon currency to enter the lotteries. Once the lottery is full a winner will be chosen at random and will have all the money in the pool sent to them.",
     challenges: [
         "Immutable nature of smart-contracts lead to a lot of testing before deployment.",
+        "Polygon network meant ETH tokens had to be bridged before we could interact with the contracts",
         "Not much learning material out there for building dApp's"
     ],
     tools: [
