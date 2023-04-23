@@ -9,7 +9,7 @@ const AboutText = () => {
                 <hr className='hr' />
                 <br />
                 <p className='hr'>
-                    I'm Chris, a software developer from Edinburgh. I developed a passion for coding after discovering blockchain technologies in 2021, I want to create memorable experiences and improve people's lives through technology. I'm constanly expanding my skill set and enjoy keeping up to date with the latest advancements in tech.
+                    I am a passionate software developer with a strong focus on creating efficient and effective solutions that solve real-world problems. With experience in both front-end and back-end development, I have a comprehensive understanding of the software development life cycle and thrive in collaborative environments where creativity and innovation are encouraged.
                 </p>
             </div>
         </div>
